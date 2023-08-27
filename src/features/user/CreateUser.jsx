@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Button from "../../ui/Button";
 import ButtonPopup from "../../ui/ButtonPopup";
 import { useDispatch } from "react-redux";
 import { updateName } from "./userSlice";
@@ -30,11 +29,11 @@ function CreateUser() {
         placeholder="Your full name"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        className="input mb-8 h-10 w-72"
+        className="input mb-8 h-10 w-72 focus:ring focus:ring-blue-500 focus:ring-offset-2 sm:focus:ring-yellow-300"
       />
 
       {username !== "" && (
-        <div >
+        <div>
           <ButtonPopup type="primary" toolTip="Order from our delicious menu.">
             Start ordering
           </ButtonPopup>

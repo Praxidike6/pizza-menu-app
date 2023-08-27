@@ -57,7 +57,6 @@ function Order() {
     },
     [fetcher],
   );
-  //console.log("fetcher menu data",fetcher.data);
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
   const {
     id,
@@ -105,7 +104,8 @@ function Order() {
             isLoadingIngredients={fetcher.state === "loading"}
             key={item.pizzaId}
             ingredients={
-              fetcher?.data?.find((el) => el.id === item.pizzaId)?.ingredients ?? []
+              fetcher?.data?.find((el) => el.id === item.pizzaId)
+                ?.ingredients ?? []
             }
           />
         ))}
@@ -123,7 +123,7 @@ function Order() {
           To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
         </p>
       </div>
-      {!priority && <UpdateOrder order={order}/>}
+      {!priority && <UpdateOrder order={order} />}
     </div>
   );
 }
